@@ -1,0 +1,514 @@
+/*
+ * Maninder English Grammar Hub polish.
+ * Phase 3: grammar hero, topic navigation, lesson cards, sidebar, and mobile rhythm.
+ */
+
+body.grammar-hub {
+  background:
+    linear-gradient(180deg, var(--me-white) 0%, var(--me-cream-50) 42%, var(--me-white) 100%);
+  color: var(--me-ink-900);
+}
+
+body.grammar-hub .wrap {
+  max-width: min(1160px, calc(100vw - 48px));
+  padding-inline: 0;
+}
+
+body.grammar-hub .me-nav {
+  top: 12px;
+  width: min(1160px, calc(100vw - 32px));
+  margin: 0 auto;
+  border: 1px solid rgba(232, 228, 220, .86);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 8px 28px rgba(26, 37, 64, .06);
+}
+
+body.grammar-hub .me-nav.scrolled {
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 14px 34px rgba(26, 37, 64, .12);
+}
+
+body.grammar-hub .me-nav[style] {
+  position: sticky !important;
+}
+
+body.grammar-hub .me-nav-inner {
+  height: 64px;
+  max-width: 100%;
+  padding-inline: 18px;
+  gap: 22px;
+}
+
+body.grammar-hub .me-logo {
+  color: var(--me-ink-800);
+  letter-spacing: 0;
+}
+
+body.grammar-hub .me-nav-links {
+  gap: 4px;
+}
+
+body.grammar-hub .me-nav-links a {
+  padding: 8px 13px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--me-muted-700);
+  font-weight: 600;
+  transition:
+    transform var(--me-duration-base) var(--me-ease-out),
+    color var(--me-duration-fast) var(--me-ease-standard),
+    background-color var(--me-duration-fast) var(--me-ease-standard),
+    border-color var(--me-duration-fast) var(--me-ease-standard);
+}
+
+body.grammar-hub .me-nav-links a:hover {
+  transform: translateY(-1px);
+  border-color: var(--me-border);
+  background: var(--me-cream-50);
+  color: var(--me-ink-800);
+}
+
+body.grammar-hub .me-nav-links a.active {
+  border-color: rgba(102, 51, 221, .18);
+  background: var(--me-violet-100);
+  color: var(--me-violet-600);
+}
+
+body.grammar-hub .nav-yt {
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(255, 0, 0, .22);
+}
+
+body.grammar-hub .gh-hero {
+  position: relative;
+  margin-top: -76px;
+  padding: clamp(140px, 14vw, 174px) 0 clamp(70px, 8vw, 100px);
+  border-bottom: 1px solid var(--me-border);
+  background:
+    linear-gradient(135deg, rgba(237, 232, 251, .72) 0%, rgba(255, 255, 255, 0) 34%),
+    linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+  overflow: hidden;
+}
+
+body.grammar-hub .gh-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 48%;
+  background-image: radial-gradient(rgba(26, 37, 64, .07) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: .34;
+  pointer-events: none;
+}
+
+body.grammar-hub .gh-hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+body.grammar-hub .gh-tag {
+  min-height: 32px;
+  margin-bottom: 26px;
+  padding: 8px 16px;
+  border: 1px solid rgba(102, 51, 221, .2);
+  border-radius: var(--me-radius-pill);
+  background: var(--me-violet-100);
+  box-shadow: 0 10px 24px rgba(102, 51, 221, .08);
+  color: var(--me-violet-600);
+  letter-spacing: .08em;
+}
+
+body.grammar-hub .gh-hero h1 {
+  max-width: 820px;
+  margin-bottom: 22px;
+  color: var(--me-ink-800);
+  font-size: clamp(44px, 5.6vw, 72px);
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+body.grammar-hub .gh-hero h1 em {
+  background: linear-gradient(130deg, var(--me-violet-600), var(--me-violet-500));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+body.grammar-hub .gh-hi {
+  width: fit-content;
+  max-width: 760px;
+  margin-bottom: 24px;
+  padding: 10px 16px;
+  border: 1px solid rgba(181, 71, 15, .16);
+  border-left: 4px solid var(--me-saffron-700);
+  border-radius: 0 12px 12px 0;
+  background: rgba(254, 243, 199, .54);
+  color: var(--me-saffron-700);
+}
+
+body.grammar-hub .gh-hero-sub {
+  max-width: 690px;
+  color: var(--me-muted-700);
+  font-size: clamp(17px, 1.45vw, 19px);
+}
+
+body.grammar-hub .gh-hero-stats {
+  width: min(100%, 760px);
+  gap: 0;
+  padding: 18px;
+  border: 1px solid rgba(232, 228, 220, .9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .72);
+  box-shadow: var(--me-shadow-sm);
+}
+
+body.grammar-hub .gh-stat {
+  flex: 1;
+  min-width: 120px;
+  padding-inline: 20px;
+}
+
+body.grammar-hub .gh-stat + .gh-stat {
+  border-left: 1px solid var(--me-border);
+}
+
+body.grammar-hub .gh-stat-num {
+  color: var(--me-ink-800);
+  letter-spacing: 0;
+}
+
+body.grammar-hub .gh-stat-label {
+  color: var(--me-muted-600);
+}
+
+body.grammar-hub .gh-topic-nav {
+  top: 88px;
+  z-index: 390;
+  width: min(1160px, calc(100vw - 32px));
+  margin: -26px auto 0;
+  border: 1px solid rgba(232, 228, 220, .9);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 12px 30px rgba(26, 37, 64, .08);
+}
+
+body.grammar-hub .gh-topic-nav-inner {
+  max-width: 100%;
+  padding-inline: 10px;
+}
+
+body.grammar-hub .gh-topic-nav::before,
+body.grammar-hub .gh-topic-nav::after {
+  display: none;
+}
+
+body.grammar-hub .gh-tnav-item,
+body.grammar-hub .gh-tnav-more-btn {
+  margin: 8px 2px;
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--me-muted-700);
+  font-weight: 700;
+  transition:
+    transform var(--me-duration-base) var(--me-ease-out),
+    color var(--me-duration-fast) var(--me-ease-standard),
+    background-color var(--me-duration-fast) var(--me-ease-standard),
+    border-color var(--me-duration-fast) var(--me-ease-standard);
+}
+
+body.grammar-hub .gh-tnav-item:hover,
+body.grammar-hub .gh-tnav-more-btn:hover,
+body.grammar-hub .gh-tnav-more.open .gh-tnav-more-btn {
+  transform: translateY(-1px);
+  border-color: var(--me-border);
+  background: var(--me-cream-50);
+  color: var(--me-ink-800);
+}
+
+body.grammar-hub .gh-tnav-item.active,
+body.grammar-hub .gh-tnav-more.active .gh-tnav-more-btn {
+  border-color: rgba(102, 51, 221, .18);
+  background: var(--me-violet-100);
+  color: var(--me-violet-600);
+}
+
+body.grammar-hub .gh-tnav-more-panel {
+  border: 1px solid var(--me-border);
+  border-radius: 14px;
+  box-shadow: var(--me-shadow-lg);
+}
+
+body.grammar-hub .gh-body {
+  padding: clamp(58px, 7vw, 88px) 0 clamp(76px, 8vw, 108px);
+}
+
+body.grammar-hub .gh-grid {
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(34px, 5vw, 58px);
+}
+
+body.grammar-hub .gh-topic-block {
+  margin-bottom: clamp(54px, 7vw, 78px);
+}
+
+body.grammar-hub .gh-topic-header {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--me-border);
+}
+
+body.grammar-hub .gh-topic-eye {
+  padding: 6px 13px;
+  border: 1px solid rgba(102, 51, 221, .14);
+  border-radius: 999px;
+  background: var(--me-violet-100);
+  letter-spacing: .08em;
+}
+
+body.grammar-hub .gh-topic-count {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--me-white);
+}
+
+body.grammar-hub .gh-topic-title {
+  color: var(--me-ink-800);
+  letter-spacing: 0;
+}
+
+body.grammar-hub .gh-topic-desc {
+  max-width: 680px;
+  color: var(--me-muted-700);
+}
+
+body.grammar-hub .gh-lessons-grid {
+  gap: 20px;
+}
+
+body.grammar-hub .gh-lesson-card {
+  position: relative;
+  padding: 24px;
+  border: 1px solid var(--me-border);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, var(--me-white), var(--me-cream-50));
+  box-shadow:
+    0 1px 2px rgba(17, 24, 39, .04),
+    0 10px 28px rgba(26, 37, 64, .08);
+  overflow: hidden;
+  transition:
+    transform var(--me-duration-base) var(--me-ease-out),
+    box-shadow var(--me-duration-base) var(--me-ease-out),
+    border-color var(--me-duration-fast) var(--me-ease-standard);
+}
+
+body.grammar-hub .gh-lesson-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--me-violet-600), var(--me-violet-500));
+  opacity: 0;
+  transform: scaleX(.35);
+  transform-origin: left center;
+  transition:
+    opacity var(--me-duration-base) var(--me-ease-standard),
+    transform var(--me-duration-slow) var(--me-ease-out);
+}
+
+body.grammar-hub .gh-lesson-card:hover {
+  border-color: rgba(102, 51, 221, .28);
+  box-shadow:
+    0 2px 6px rgba(17, 24, 39, .05),
+    0 22px 46px rgba(26, 37, 64, .14);
+  transform: translateY(-5px);
+}
+
+body.grammar-hub .gh-lesson-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+body.grammar-hub .gh-lc-num,
+body.grammar-hub .gh-lc-level {
+  border-radius: 999px;
+}
+
+body.grammar-hub .gh-lc-title {
+  color: var(--me-ink-800);
+  font-size: 17px;
+  letter-spacing: 0;
+}
+
+body.grammar-hub .gh-lc-desc {
+  color: var(--me-muted-700);
+}
+
+body.grammar-hub .gh-lc-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(102, 51, 221, .18);
+  border-radius: 999px;
+  background: var(--me-violet-100);
+}
+
+body.grammar-hub .gh-aside {
+  top: 128px;
+}
+
+body.grammar-hub .gh-aside-section,
+body.grammar-hub .gh-tutor-cta {
+  border-radius: 18px;
+  box-shadow: var(--me-shadow-sm);
+}
+
+body.grammar-hub .gh-aside-section {
+  border: 1px solid var(--me-border);
+  background: rgba(255, 255, 255, .78);
+}
+
+body.grammar-hub .gh-aside-label {
+  color: var(--me-muted-600);
+  letter-spacing: .08em;
+}
+
+body.grammar-hub .gh-topic-list a {
+  border-radius: 10px;
+  padding: 10px 8px;
+  border-bottom: 0;
+}
+
+body.grammar-hub .gh-topic-list a:hover {
+  background: var(--me-violet-100);
+}
+
+body.grammar-hub .gh-tutor-cta {
+  border: 1px solid rgba(255, 255, 255, .18);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, 0) 45%),
+    linear-gradient(135deg, var(--me-violet-600), var(--me-violet-700));
+}
+
+body.grammar-hub .gh-tutor-btn {
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(17, 24, 39, .12);
+  transition:
+    transform var(--me-duration-base) var(--me-ease-out),
+    box-shadow var(--me-duration-base) var(--me-ease-out),
+    opacity var(--me-duration-fast) var(--me-ease-standard);
+}
+
+body.grammar-hub .gh-tutor-btn:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(17, 24, 39, .18);
+}
+
+body.grammar-hub footer.me-footer {
+  background:
+    linear-gradient(180deg, #1a2540 0%, #111827 100%);
+}
+
+body.grammar-hub .foot-logo {
+  letter-spacing: 0;
+}
+
+body.grammar-hub .foot-col a {
+  display: inline-flex;
+  transform-origin: left center;
+}
+
+body.grammar-hub .foot-col a:hover {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  body.grammar-hub .gh-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.grammar-hub .gh-aside {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  body.grammar-hub .wrap {
+    max-width: calc(100vw - 32px);
+  }
+
+  body.grammar-hub .me-nav {
+    top: 8px;
+    width: calc(100vw - 20px);
+    border-radius: 14px;
+  }
+
+  body.grammar-hub .me-nav-inner {
+    height: 60px;
+    padding-inline: 14px;
+  }
+
+  body.grammar-hub .gh-hero {
+    margin-top: -68px;
+    padding-top: 122px;
+  }
+
+  body.grammar-hub .gh-hero h1 {
+    font-size: clamp(38px, 12vw, 56px);
+  }
+
+  body.grammar-hub .gh-hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  body.grammar-hub .gh-stat {
+    padding: 0;
+  }
+
+  body.grammar-hub .gh-stat + .gh-stat {
+    border-left: 0;
+  }
+
+  body.grammar-hub .gh-topic-nav {
+    top: 78px;
+    width: calc(100vw - 20px);
+    margin: 0 auto;
+  }
+
+  body.grammar-hub .gh-tnav-select {
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: transparent;
+  }
+
+  body.grammar-hub .gh-body {
+    padding-top: 72px;
+  }
+
+  body.grammar-hub .gh-topic-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  body.grammar-hub .gh-lessons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.grammar-hub .foot-grid,
+  body.grammar-hub .foot-bottom {
+    padding-inline: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  body.grammar-hub .gh-hero-stats {
+    grid-template-columns: 1fr;
+  }
+}

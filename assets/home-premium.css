@@ -1,0 +1,424 @@
+/*
+ * Maninder English homepage polish.
+ * Phase 2: visible hierarchy, navigation, hero, card, spacing, and mobile refinements.
+ */
+
+body.page-template-page-home {
+  background:
+    linear-gradient(180deg, var(--me-white) 0%, var(--me-cream-50) 38%, var(--me-cream-100) 100%);
+}
+
+body.page-template-page-home .wrap {
+  max-width: min(1180px, calc(100vw - 48px));
+}
+
+body.page-template-page-home section {
+  padding-block: clamp(72px, 8vw, 104px);
+}
+
+body.page-template-page-home .sh {
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+body.page-template-page-home .sh h2 {
+  max-width: 720px;
+  letter-spacing: 0;
+}
+
+body.page-template-page-home .sh p {
+  max-width: 620px;
+}
+
+body.page-template-page-home .me-nav {
+  top: 12px;
+  width: min(1180px, calc(100vw - 32px));
+  margin: 0 auto;
+  border: 1px solid rgba(232, 228, 220, .86);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .86);
+  box-shadow: 0 8px 28px rgba(26, 37, 64, .06);
+}
+
+body.page-template-page-home .me-nav.scrolled {
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 14px 34px rgba(26, 37, 64, .12);
+}
+
+body.page-template-page-home .me-nav-wrap {
+  height: 64px;
+  max-width: 100%;
+  padding-inline: 18px;
+}
+
+body.page-template-page-home .me-logo {
+  letter-spacing: 0;
+}
+
+body.page-template-page-home .me-nav-links {
+  gap: 4px;
+}
+
+body.page-template-page-home .me-nav-links a {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: var(--me-muted-700);
+  font-weight: 600;
+  transition:
+    color var(--me-duration-fast) var(--me-ease-standard),
+    background-color var(--me-duration-fast) var(--me-ease-standard),
+    border-color var(--me-duration-fast) var(--me-ease-standard),
+    transform var(--me-duration-base) var(--me-ease-out);
+}
+
+body.page-template-page-home .me-nav-links a:hover {
+  background: var(--me-cream-50);
+  border-color: var(--me-border);
+  color: var(--me-ink-800);
+  transform: translateY(-1px);
+}
+
+body.page-template-page-home .me-nav-links a.active {
+  background: var(--me-violet-100);
+  border-color: rgba(102, 51, 221, .18);
+  color: var(--me-violet-600);
+}
+
+body.page-template-page-home .hero-outer {
+  position: relative;
+  padding: clamp(64px, 8vw, 104px) 0 clamp(76px, 9vw, 116px);
+  border-bottom: 1px solid var(--me-border);
+  background:
+    linear-gradient(135deg, rgba(237, 232, 251, .64) 0%, rgba(255, 255, 255, 0) 32%),
+    linear-gradient(180deg, #ffffff 0%, #fbfaf7 100%);
+  overflow: hidden;
+}
+
+body.page-template-page-home .hero-outer::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background-image: radial-gradient(rgba(26, 37, 64, .07) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: .32;
+  pointer-events: none;
+}
+
+body.page-template-page-home .hero-grid {
+  position: relative;
+  z-index: 1;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+  gap: clamp(48px, 6vw, 76px);
+}
+
+body.page-template-page-home .hero-badge {
+  margin-bottom: 26px;
+  padding: 8px 16px;
+  border-color: rgba(102, 51, 221, .2);
+  box-shadow: 0 10px 24px rgba(102, 51, 221, .08);
+}
+
+body.page-template-page-home .hero-h1 {
+  max-width: 680px;
+  font-size: clamp(46px, 5.8vw, 76px);
+  letter-spacing: 0;
+  line-height: .98;
+  margin-bottom: 20px;
+}
+
+body.page-template-page-home .hero-hindi {
+  width: fit-content;
+  margin-bottom: 22px;
+  padding: 10px 16px;
+  border: 1px solid rgba(181, 71, 15, .16);
+  border-left: 4px solid var(--me-saffron-700);
+  border-radius: 0 12px 12px 0;
+  background: rgba(254, 243, 199, .52);
+}
+
+body.page-template-page-home .hero-sub {
+  max-width: 560px;
+  font-size: clamp(17px, 1.45vw, 20px);
+  color: var(--me-muted-700);
+}
+
+body.page-template-page-home .hero-ctas {
+  gap: 14px;
+  margin-bottom: 42px;
+}
+
+body.page-template-page-home .btn {
+  border-radius: 12px;
+  letter-spacing: 0;
+}
+
+body.page-template-page-home .btn-v {
+  background: linear-gradient(135deg, var(--me-violet-600), var(--me-violet-500));
+  box-shadow: var(--me-shadow-violet);
+}
+
+body.page-template-page-home .btn-v:hover {
+  box-shadow: 0 18px 38px rgba(102, 51, 221, .30);
+}
+
+body.page-template-page-home .btn-outline {
+  background: rgba(255, 255, 255, .82);
+  box-shadow: var(--me-shadow-xs);
+}
+
+body.page-template-page-home .hero-stats {
+  width: min(100%, 620px);
+  padding: 18px;
+  border: 1px solid rgba(232, 228, 220, .9);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .7);
+  box-shadow: var(--me-shadow-sm);
+}
+
+body.page-template-page-home .hstat {
+  padding-inline: 6px;
+}
+
+body.page-template-page-home .hstat + .hstat {
+  padding-left: 22px;
+}
+
+body.page-template-page-home .hstat .n {
+  letter-spacing: 0;
+}
+
+body.page-template-page-home .hero-r {
+  min-height: 510px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 24px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, .12) 0%, rgba(255, 255, 255, 0) 42%),
+    linear-gradient(145deg, #5627c8 0%, #6633dd 48%, #3e1d91 100%);
+  box-shadow:
+    0 24px 60px rgba(102, 51, 221, .24),
+    inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+
+body.page-template-page-home .hero-r::before,
+body.page-template-page-home .hero-r::after {
+  display: none;
+}
+
+body.page-template-page-home .lcard {
+  max-width: 350px;
+  border: 1px solid rgba(255, 255, 255, .74);
+  border-radius: 18px;
+  box-shadow: 0 22px 48px rgba(17, 24, 39, .24);
+}
+
+body.page-template-page-home .lcard-head {
+  background: linear-gradient(180deg, #ffffff, #fbfaf7);
+}
+
+body.page-template-page-home .hero-mini {
+  max-width: 350px;
+  border-color: rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .14);
+}
+
+body.page-template-page-home .marquee-strip {
+  border-top: 0;
+  background: #fff;
+  box-shadow: inset 0 1px 0 var(--me-border), inset 0 -1px 0 var(--me-border);
+}
+
+body.page-template-page-home .levels-section,
+body.page-template-page-home .lessons-section {
+  background: #fff;
+}
+
+body.page-template-page-home .explore-section,
+body.page-template-page-home .test-section {
+  background:
+    linear-gradient(180deg, var(--me-cream-50) 0%, var(--me-cream-100) 100%);
+}
+
+body.page-template-page-home .level-grid,
+body.page-template-page-home .lessons-grid,
+body.page-template-page-home .explore-grid,
+body.page-template-page-home .test-grid {
+  gap: 24px;
+}
+
+body.page-template-page-home .level-card,
+body.page-template-page-home .lesson-card,
+body.page-template-page-home .explore-card,
+body.page-template-page-home .ttest {
+  border-width: 1px;
+  box-shadow:
+    0 1px 2px rgba(17, 24, 39, .04),
+    0 10px 28px rgba(26, 37, 64, .08);
+}
+
+body.page-template-page-home .level-card:hover,
+body.page-template-page-home .lesson-card:hover,
+body.page-template-page-home .explore-card:hover,
+body.page-template-page-home .ttest:hover {
+  box-shadow:
+    0 2px 6px rgba(17, 24, 39, .05),
+    0 22px 46px rgba(26, 37, 64, .14);
+}
+
+body.page-template-page-home .lv-body,
+body.page-template-page-home .explore-body {
+  padding-bottom: 32px;
+}
+
+body.page-template-page-home .lv-title,
+body.page-template-page-home .explore-body h3,
+body.page-template-page-home .lesson-body h3 {
+  letter-spacing: 0;
+}
+
+body.page-template-page-home .lv-cta,
+body.page-template-page-home .explore-count,
+body.page-template-page-home .lesson-level-badge,
+body.page-template-page-home .qp-badge,
+body.page-template-page-home .qp-result-pill {
+  border-radius: 999px;
+}
+
+body.page-template-page-home .lesson-thumb-placeholder::before,
+body.page-template-page-home .quiz-section::before {
+  background-size: 24px 24px;
+  opacity: .48;
+}
+
+body.page-template-page-home .yt-channel-cta {
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(139, 108, 246, .22), rgba(4, 120, 87, .12)),
+    #1a2540;
+  box-shadow: 0 18px 44px rgba(26, 37, 64, .20);
+}
+
+body.page-template-page-home .yt-channel-cta::before {
+  display: none;
+}
+
+body.page-template-page-home .quiz-section {
+  background:
+    linear-gradient(135deg, #1a2540 0%, #263354 50%, #5220c8 100%);
+}
+
+body.page-template-page-home .q-orb {
+  display: none;
+}
+
+body.page-template-page-home .quiz-preview {
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 22px;
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, .28),
+    0 1px 0 rgba(255, 255, 255, .28);
+}
+
+body.page-template-page-home footer.me-footer {
+  background:
+    linear-gradient(180deg, #1a2540 0%, #111827 100%);
+}
+
+body.page-template-page-home .foot-col a {
+  display: inline-flex;
+  transform-origin: left center;
+}
+
+body.page-template-page-home .foot-col a:hover {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1040px) {
+  body.page-template-page-home .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-template-page-home .hero-r {
+    min-height: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  body.page-template-page-home .wrap {
+    max-width: calc(100vw - 32px);
+    padding-inline: 0;
+  }
+
+  body.page-template-page-home section {
+    padding-block: 64px;
+  }
+
+  body.page-template-page-home .me-nav {
+    top: 8px;
+    width: calc(100vw - 20px);
+    border-radius: 14px;
+  }
+
+  body.page-template-page-home .me-nav-wrap {
+    height: 60px;
+    padding-inline: 14px;
+  }
+
+  body.page-template-page-home .me-nav-right {
+    margin-left: 10px;
+  }
+
+  body.page-template-page-home .hero-outer {
+    padding-top: 56px;
+  }
+
+  body.page-template-page-home .hero-h1 {
+    font-size: clamp(40px, 12vw, 58px);
+  }
+
+  body.page-template-page-home .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body.page-template-page-home .hstat + .hstat {
+    padding-left: 6px;
+    padding-top: 12px;
+    border-left: 0;
+    border-top: 1px solid var(--me-border);
+  }
+
+  body.page-template-page-home .hero-r {
+    min-height: 390px;
+    padding: 28px 20px;
+  }
+
+  body.page-template-page-home .mq-item {
+    min-width: 250px;
+    padding-inline: 24px;
+  }
+
+  body.page-template-page-home .level-grid,
+  body.page-template-page-home .lessons-grid,
+  body.page-template-page-home .explore-grid,
+  body.page-template-page-home .test-grid {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  body.page-template-page-home .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body.page-template-page-home .quiz-stats {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-template-page-home .quiz-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,87 @@
+/*
+Theme Name:   Maninder English Child
+Theme URI:    https://maninderenglish.com
+Description:  Astra Child Theme for Maninder English — custom homepage template with full animation support
+Author:       Maninder English
+Author URI:   https://maninderenglish.com
+Template:     astra
+Version:      1.0.0
+Text Domain:  maninderenglish-child
+*/
+
+/* Child theme inherits all Astra styles via functions.php.
+   Custom overrides go here — keep Astra's global styles intact. */
+
+/* ── Remove Astra default padding on custom template pages ── */
+body.page-template-page-home #content,
+body.page-template-page-home .ast-container,
+body.page-template-page-home .entry-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+body.page-template-page-home .ast-article-post,
+body.page-template-page-home .ast-blog-single-element {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide Astra page title on custom template */
+body.page-template-page-home .entry-header,
+body.page-template-page-home .ast-breadcrumbs-wrapper {
+  display: none !important;
+}
+
+/* Full width content area */
+body.page-template-page-home #primary,
+body.page-template-page-home #content .ast-container {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+/* ── PATCH v2 fixes ── */
+.wotd-l .sh h2#wotd-heading {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  display: block !important;
+  font-size: 38px !important;
+}
+.quiz-section .btn:not(.btn-v) {
+  color: #ffffff !important;
+  border: 2px solid rgba(255,255,255,0.75) !important;
+  background: rgba(255,255,255,0.12) !important;
+}
+.level-card .lv-emoji svg { display: block !important; }
+.lv-beginner .lv-emoji,
+.lv-intermediate .lv-emoji,
+.lv-advanced .lv-emoji { font-size: 0; }.  
+/* ── Level card icon override — replace circles with letters ── */
+.lv-beginner .lv-emoji::after {
+  content: 'B';
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+}
+.lv-intermediate .lv-emoji::after { content: 'I'; display: flex; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.25); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; align-items: center; justify-content: center; }
+.lv-advanced .lv-emoji::after { content: 'A'; display: flex; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.25); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 800; align-items: center; justify-content: center; }
+
+/* ── WOTD section heading fix ── */
+.wotd-section .sh h2,
+.wotd-section h2,
+#wotd-heading {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  font-size: 40px !important;
+  font-weight: 800 !important;
+  margin-bottom: 12px !important;
+}
